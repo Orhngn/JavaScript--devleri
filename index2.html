@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayı Artırma ve Azaltma</title>
+</head>
+
+<body>
+
+    <!-- girilen sayıyı artırma ve azaltma -->
+    <center style="font-size: 32px;">
+
+        <h1>Girilen Sayıyı Artırma Ve Azaltma</h1>
+
+        <input type="number" id="sayi" placeholder="sayı giriniz">
+        <button onclick="sayiAl()">Gönder</button>
+        <button onclick="sayiArtır()">Artır</button>
+        <button onclick="sayiAzalt()">Azalt</button>
+
+        <p id="sonuc">Sonuç Buraya</p>
+        <p id="sonuc1">Artırma ve Azaltma Sonucu Buraya</p>
+    </center>
+
+
+    <script>
+        let sayi;
+        function sayiAl() {
+            sayi = document.getElementById('sayi').value;
+            console.log(sayi);
+            document.getElementById('sonuc').innerHTML = sayi;
+        }
+        function sayiArtır() {
+            sayi++;
+            document.getElementById('sonuc1').innerHTML = sayi;
+        }
+        function sayiAzalt() {
+            sayi--;
+            document.getElementById('sonuc1').innerHTML = sayi;
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sınav Sonu Notları</title>
+</head>
+
+<body>
+    <!-- kullanıcadan alınan vize,final,proje notlarına göre sonuç hesaplayan program -->
+
+
+    <center style="font-size: 32px;">
+        <h1>Dönem Sonu Notunuzu Hesaplayın</h1>
+
+        <input type="number" id="vize" placeholder="Vize Notunuzu Giriniz">
+        <input type="number" id="final" placeholder="Final Notunuzu Giriniz">
+        <input type="number" id="proje" placeholder="Proje Notunuzu Giriniz">
+        <button onclick="notHesapla()">Hesapla</button>
+
+        <p id="sonuc">Sonuç Buraya Yazılacak</p>
+    </center>
+
+
+    <script>
+        function notHesapla() {
+            let vize = document.getElementById('vize').value;
+            let final = document.getElementById('final').value;
+            let proje = document.getElementById('proje').value;
+
+            let donemSonu = (vize * 0.3) + (final * 0.5) + (proje * 0.2);
+            let harfNotu = '';
+            if (donemSonu <= 40) {
+                harfNotu = 'FF / Kaldı';
+            }
+            else if (donemSonu > 40 && donemSonu <= 50) {
+                harfNotu = 'DD / Kaldı';
+            }
+            else if (donemSonu > 50 && donemSonu <= 70) {
+                harfNotu = 'CC / Geçti';
+            }
+            else if (donemSonu > 70 && donemSonu <= 85) {
+                harfNotu = 'BB / Geçti'
+            }
+            else {
+                harfNotu = 'AA / Geçti'
+            }
+
+            document.getElementById('sonuc').innerHTML = 'vize notu : ' + vize + ' final notu : ' + final + ' proje notu : ' + proje + '<br>'
+                + 'dönem sonu ortalama : ' + donemSonu + ' harf notu : ' + harfNotu;
+
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
